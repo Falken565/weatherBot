@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} WeatherBot ULTIMATE PRO{% endblock %}
+{% block header %}Пользователи сервиса{% endblock %}
+{% block content %}
+<div class="container">
+
+  {% for user in page %}
+    {% include "user_item.html" with user=user %}
+  {% endfor %}
+  {% include "paginator.html" with items=page paginator=paginator %}
+
+</div>
+{% endblock %}
