@@ -1,9 +1,12 @@
+from msilib.schema import Error
+
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
 
-from .forms import RegForm
 from users.models import User
+
+from . import bot
+from .forms import RegForm
 
 
 def index(request):
@@ -46,4 +49,9 @@ def register(request, user_id):
 
 
 def weather(request, user_id):
-    pass
+    user = get_object_or_404(User, pk=user_id)
+    if user.status is True:
+        tg_id = user.tg_id
+        bot.tg_bot(tg_id)
+        return redirect('index')
+    raise Error(message='Сначала зарегистрируйтесь в боте')

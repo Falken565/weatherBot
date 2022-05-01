@@ -1,0 +1,9 @@
+**
+
+!web/
+!users/
+!weatherbot
+!requirements.txt
+
+.idea/
+__pycache__
