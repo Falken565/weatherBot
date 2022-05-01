@@ -4,6 +4,7 @@
 !users/
 !weatherbot
 !requirements.txt
+!manage.py
 
 .idea/
 __pycache__

@@ -29,7 +29,7 @@ services:
       - web
     volumes:
       - ./static:/var/www/django/static
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
     

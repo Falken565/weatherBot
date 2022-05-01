@@ -1,5 +1,3 @@
-from msilib.schema import Error
-
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -50,8 +48,6 @@ def register(request, user_id):
 
 def weather(request, user_id):
     user = get_object_or_404(User, pk=user_id)
-    if user.status is True:
-        tg_id = user.tg_id
-        bot.tg_bot(tg_id)
-        return redirect('index')
-    raise Error(message='Сначала зарегистрируйтесь в боте')
+    tg_id = user.tg_id
+    bot.tg_bot(tg_id)
+    return redirect('index')
