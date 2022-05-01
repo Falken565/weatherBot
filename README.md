@@ -83,7 +83,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 
 ### Где искать:
-проект завускается на локальном сервере: 
+проект запускается на локальном сервере: 
 ```
 http://127.0.0.1:8000/
 ```

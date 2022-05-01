@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["gunicorn", "weatherbot.urls", "-w", "4", "-t", "600", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "weatherbot.wsgi.application", "-w", "4", "-t", "600", "-b", "0.0.0.0:8000"]
